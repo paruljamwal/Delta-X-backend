@@ -1,21 +1,16 @@
 const express = require("express");
-const connect=require('./config/db');
 
 //controllers....
-const userController=require("./Controller/user.controller")
+const userController=require("./Controller/user.controller");
+const artistController=require("./Controller/artist.controller");
+const songContrpller=require("./Controller/song.controller");
 
 const app = express();
 
 // Middleware....
 app.use(express.json()); //for post
 app.use("/users",userController);
+app.use("/song",songContrpller);
+app.use("/artist",artistController);
 
-
-app.listen(5000, async () => {
-  try {
-    await connect();
-    console.log("Listening on port 5000");
-  } catch (error) {
-    console.log(error);
-  }
-});
+module.exports=app;

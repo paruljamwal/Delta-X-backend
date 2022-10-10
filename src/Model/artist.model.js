@@ -6,7 +6,7 @@ const mongoose=require("mongoose");
 const artistSchema = new mongoose.Schema(
     {
       name: { type: String, required: true },
-      DOB: { type: Number, required: true },
+      DOB: { type: String, required: true },
       Bio: { type: String, required: true },
     },
     {

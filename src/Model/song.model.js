@@ -5,7 +5,9 @@ const mongoose=require("mongoose");
 const SongSchema = new mongoose.Schema(
     {
       name: { type: String, required: true },
-      Cover: { type: String, required: true },
+      cover: { type: String, required: true },
+      userId:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
+      artistId:[{type:mongoose.Schema.Types.ObjectId,ref:"Artist"}]
     },
     {
       timestamps: true,
