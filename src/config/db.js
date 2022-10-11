@@ -1,10 +1,7 @@
 const mongoose = require("mongoose");
 
-// how mongoose connect with mongodb....
-const connect = () => {
-    return mongoose.connect(
-      "mongodb+srv://Parul:Parul@cluster0.wq7qrqg.mongodb.net/DeltaX?retryWrites=true&w=majority"
-    );
-  };
+require("dotenv").config();
+module.exports = ()=>{
 
-module.exports= connect;
+    return mongoose.connect(process.env.MONGODB_URL);
+}

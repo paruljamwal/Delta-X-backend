@@ -1,12 +1,12 @@
 const app=require("./index");
 const connect=require('./config/db');
 
+const PORT = process.env.PORT || 5000
 
-
-app.listen(5000, async () => {
+app.listen(PORT, async () => {
     try {
       await connect();
-      console.log("Listening on port 5000");
+      console.log(`Listening on port ${PORT}`);
     } catch (error) {
       console.log(error);
     }
