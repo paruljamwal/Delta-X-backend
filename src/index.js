@@ -7,6 +7,7 @@ app.use(express.json()); //for post
 
 const PORT = process.env.PORT 
 const connect=require('./config/db');
+
 //controllers....
 const artistController=require("./Controller/artist.controller");
 const songContrpller=require("./Controller/song.controller");
