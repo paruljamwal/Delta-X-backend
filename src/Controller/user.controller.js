@@ -1,6 +1,6 @@
 
 const User = require("../Model/user.model")
-
+const { body, validationResult } = require('express-validator');
 
 const register = async (req, res) => {
     try{
