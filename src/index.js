@@ -11,7 +11,8 @@ const connect=require('./config/db');
 //controllers....
 const artistController=require("./Controller/artist.controller");
 const songContrpller=require("./Controller/song.controller");
-const {register,login}=require("./Controller/user.controller")
+const ratingController=require("./Controller/rate.controller");
+const {register,login}=require("./Controller/user.controller");
 
 
 // Middleware....
@@ -19,6 +20,7 @@ app.post("/register",register);
 app.post("/login",login);
 app.use("/song",songContrpller);
 app.use("/artist",artistController);
+app.use("/rating",ratingController)
 
 
 

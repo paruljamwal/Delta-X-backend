@@ -2,13 +2,11 @@ const mongoose=require("mongoose");
 
 // Songs schema
 
-const SongSchema = new mongoose.Schema(
+const RatingSchema = new mongoose.Schema(
     {
-      name: { type: String, required: true },
-      cover: { type: String, required: true },
+      rating:{type:Number,enum:[0,1,2,3,4,5]},
       userId:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
       artistId:[{type:mongoose.Schema.Types.ObjectId,ref:"Artist"}],
-      rating:{type:mongoose.Schema.Types.ObjectId,ref:"Rating"}
     },
     {
       timestamps: true,
@@ -18,6 +16,6 @@ const SongSchema = new mongoose.Schema(
   
   // Songs Model
   
-  const Song = mongoose.model("Song", SongSchema);
+  const Rate = mongoose.model("Rating", RatingSchema);
 
-  module.exports= Song;
+  module.exports= Rate;
