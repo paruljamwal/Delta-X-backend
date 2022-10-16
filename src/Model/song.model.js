@@ -8,7 +8,7 @@ const SongSchema = new mongoose.Schema(
       cover: { type: String, required: true },
       userId:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
       artistId:[{type:mongoose.Schema.Types.ObjectId,ref:"Artist"}],
-      rating:{type:mongoose.Schema.Types.ObjectId,ref:"Rating"}
+      rating:{type:Number}
     },
     {
       timestamps: true,
